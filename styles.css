@@ -847,13 +847,13 @@ img {
 }
 
 .trips-card h3 {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .trips-card p {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     color: var(--color-gray-400);
     line-height: 1.6;
 }
@@ -1081,13 +1081,13 @@ img {
 }
 
 .timeline-content h3 {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
 .timeline-content p {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--color-gray-400);
 }
 
@@ -1323,7 +1323,7 @@ img {
 
 .cta-content h3 {
     font-family: var(--font-display);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -1331,6 +1331,7 @@ img {
     color: var(--color-gray-300);
     margin-bottom: 2rem;
     line-height: 1.7;
+    font-size: 0.9375rem;
 }
 
 .cta-buttons {
@@ -1893,8 +1894,8 @@ img {
         align-items: flex-start !important;
         padding-top: 100px !important;
         /* Move content higher */
-        min-height: 90vh;
-        /* Adjust height for mobile */
+        min-height: 100vh !important;
+        /* Full height for cleaner transition */
     }
 
     .hero-content {
@@ -1917,6 +1918,11 @@ img {
     .hero-subtitle {
         font-size: 0.9rem;
         line-height: 1.6;
+    }
+
+    .hero-scroll {
+        bottom: 5rem !important;
+        /* Move higher to create space below */
     }
 
     /* Buttons - larger touch targets */
