@@ -924,7 +924,7 @@ function initWordReveal() {
                     // First paragraph starts at 1600ms.
                     // Second paragraph starts much later (e.g., 5000ms) to ensure the first one finishes.
                     let baseDelay = 1600;
-                    if (index > 0) baseDelay = 5500;
+                    if (index > 0) baseDelay = 3500;
 
                     const words = entry.target.querySelectorAll('.word-span');
                     words.forEach((word, i) => {

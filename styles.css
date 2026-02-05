@@ -1116,8 +1116,8 @@ img {
 
 .security-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
     margin-bottom: var(--space-2xl);
 }
 
@@ -1125,7 +1125,7 @@ img {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-lg);
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     transition: all var(--transition-base);
 }
@@ -1136,23 +1136,23 @@ img {
 }
 
 .security-badge {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--gradient-gold);
     color: var(--color-black);
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
     border-radius: var(--radius-full);
 }
 
 .security-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1166,8 +1166,8 @@ img {
 }
 
 .security-icon svg {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     color: var(--color-gold);
     transition: color var(--transition-base);
 }
