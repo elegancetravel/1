@@ -1852,38 +1852,157 @@ img {
 
 @media (max-width: 480px) {
     .section {
-        padding: var(--space-2xl) 0;
+        padding: var(--space-xl) 0;
     }
 
+    /* Hero Section Mobile */
     .hero-badge {
         padding: 0.375rem 1rem;
         font-size: 0.6875rem;
     }
 
-    .btn {
-        padding: 0.875rem 1.5rem;
-        font-size: 0.8125rem;
+    .hero-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+        line-height: 1.2;
     }
 
+    .hero-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* Buttons - larger touch targets */
+    .btn {
+        padding: 1rem 1.75rem;
+        font-size: 0.9rem;
+        min-height: 48px;
+        /* Minimum touch target */
+    }
+
+    /* Section Headers */
+    .section-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .section-tag {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    .section-description {
+        font-size: 0.9375rem;
+    }
+
+    /* About Section with Video */
+    .section-about {
+        min-height: auto;
+        padding: var(--space-lg) 0 var(--space-xl) 0;
+    }
+
+    .section-about .container {
+        padding: 0 1rem;
+    }
+
+    .about-grid {
+        gap: var(--space-lg);
+    }
+
+    .about-content .lead {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .about-text {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    /* Word animation spacing on mobile */
+    .word-span {
+        margin-right: 0.25em;
+    }
+
+    /* Feature items - vertical layout */
     .feature-item {
         flex-direction: column;
         text-align: center;
+        padding: 1.25rem;
     }
 
+    .feature-icon {
+        margin: 0 auto 0.75rem;
+    }
+
+    .feature-text h4 {
+        font-size: 1rem;
+    }
+
+    .feature-text p {
+        font-size: 0.875rem;
+    }
+
+    /* Amenities Grid */
     .amenities-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 100%;
     }
 
+    .amenity-card {
+        padding: 1.25rem;
+    }
+
+    .amenity-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .amenity-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .amenity-title {
+        font-size: 1rem;
+    }
+
+    .amenity-text {
+        font-size: 0.8125rem;
+    }
+
+    /* Image frames */
     .image-frame {
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
+    /* CTA buttons */
     .cta-buttons .btn {
-        padding: 1rem 1.25rem;
+        padding: 1rem 1.5rem;
     }
 
+    /* Contact section */
     .contact-cta-box {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .contact-card {
+        padding: 1.25rem;
+    }
+
+    /* Footer */
+    .footer-brand {
+        font-size: 1.25rem;
+    }
+
+    /* Video overlay - ensure text is readable */
+    .video-overlay {
+        background: rgba(10, 10, 10, 0.55);
+    }
+
+    /* Scroll Video Section adjustments */
+    .scroll-video-container {
+        height: 100%;
     }
 }
 
@@ -2874,6 +2993,22 @@ img {
 @media (max-width: 768px) {
     .about-features {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+    .about-features .feature-item {
+        padding: 1rem;
+    }
+
+    .section-about {
+        min-height: auto;
+        padding: var(--space-lg) 0 var(--space-xl) 0;
+    }
+
+    .section-about .about-grid {
+        max-width: 100%;
+        padding: 0 0.5rem;
     }
 }
 
