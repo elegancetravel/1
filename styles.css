@@ -2787,8 +2787,8 @@ img {
     position: relative;
     min-height: 100vh;
     /* Ensure full screen */
-    padding: var(--space-xl) 0 var(--space-3xl) 0;
-    /* Reduced top padding */
+    padding: var(--space-sm) 0 var(--space-3xl) 0;
+    /* Further reduced top padding */
     background: transparent;
     overflow: hidden;
     display: flex;
