@@ -709,15 +709,20 @@ img {
 
 .amenities-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns for smaller cards */
     gap: 1.5rem;
+    max-width: 1000px;
+    /* Centered compact layout */
+    margin: 0 auto;
 }
 
 .amenity-card {
     background: var(--color-black-light);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 1.5rem;
+    /* Reduced padding */
     text-align: center;
     transition: all var(--transition-base);
     position: relative;
@@ -747,9 +752,10 @@ img {
 }
 
 .amenity-icon {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 1.25rem;
+    width: 48px;
+    /* Smaller icon container */
+    height: 48px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -763,8 +769,9 @@ img {
 }
 
 .amenity-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    /* Smaller svg */
+    height: 22px;
     color: var(--color-gold);
     transition: color var(--transition-base);
 }
@@ -785,7 +792,8 @@ img {
 }
 
 .amenity-wide {
-    grid-column: span 3;
+    grid-column: span 2;
+    /* Spans 2 in a 4-col grid */
 }
 
 /* ========================================
@@ -1675,11 +1683,7 @@ img {
     }
 
     .amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .amenity-wide {
-        grid-column: span 2;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .security-grid {
@@ -1764,11 +1768,7 @@ img {
     }
 
     .amenities-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .amenity-wide {
-        grid-column: span 1;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .quote-timeline {
@@ -1868,6 +1868,10 @@ img {
     .feature-item {
         flex-direction: column;
         text-align: center;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr;
     }
 
     .image-frame {
