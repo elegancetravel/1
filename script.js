@@ -800,46 +800,97 @@ document.head.appendChild(floatStyle);
 // BACKGROUND VIDEO PLAYLIST
 // ========================================
 function initBackgroundVideo() {
+    const container = document.querySelector('.scroll-video-container');
     const video = document.getElementById('scrollVideo');
-    if (!video) return;
+    if (!video || !container) return;
 
-    // Playlist configuration
     const playlist = [
         'mgv1.mp4',
         'mgv2.mp4'
     ];
     let currentVideoIndex = 0;
 
-    // Ensure strictly muted and setup
-    video.muted = true;
-    video.playsInline = true;
-    video.autoplay = true; // Still try autoplay
+    // Create a second video element for seamless transitions
+    const video2 = document.createElement('video');
+    video2.className = 'scroll-video';
+    video2.muted = true;
+    video2.playsInline = true;
+    video2.preload = 'auto';
+    video2.style.position = 'absolute';
+    video2.style.top = '0';
+    video2.style.left = '0';
+    video2.style.width = '100%';
+    video2.style.height = '100%';
+    video2.style.objectFit = 'cover';
+    video2.style.opacity = '0';
+    video2.style.transition = 'opacity 0.5s ease';
+    container.insertBefore(video2, container.querySelector('.video-overlay'));
 
-    // Function to play next video
+    // Style the main video for transitions
+    video.style.transition = 'opacity 0.5s ease';
+
+    let activeVideo = video;
+    let nextVideo = video2;
+
+    function preloadNextVideo() {
+        const nextIndex = (currentVideoIndex + 1) % playlist.length;
+        nextVideo.src = playlist[nextIndex];
+        nextVideo.load();
+    }
+
     function playNextVideo() {
-        video.src = playlist[currentVideoIndex];
-        const playPromise = video.play();
+        // Set source and play current video
+        activeVideo.src = playlist[currentVideoIndex];
+        activeVideo.style.opacity = '1';
 
+        const playPromise = activeVideo.play();
         if (playPromise !== undefined) {
             playPromise.catch(error => {
-                console.log("Autoplay likely prevented, waiting for interaction", error);
+                console.log("Autoplay prevented:", error);
             });
         }
 
-        // Increment index and loop
-        currentVideoIndex++;
-        if (currentVideoIndex >= playlist.length) {
-            currentVideoIndex = 0;
-        }
+        // Preload the next video
+        preloadNextVideo();
+
+        // Increment index
+        currentVideoIndex = (currentVideoIndex + 1) % playlist.length;
     }
 
-    // When one video ends, play the next
-    video.addEventListener('ended', playNextVideo);
+    function switchVideos() {
+        // Fade out current, fade in next
+        activeVideo.style.opacity = '0';
+        nextVideo.style.opacity = '1';
 
-    // Remove the 'loop' attribute if it exists in HTML because we handle looping manually
+        const playPromise = nextVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Autoplay prevented:", error);
+            });
+        }
+
+        // Swap references
+        const temp = activeVideo;
+        activeVideo = nextVideo;
+        nextVideo = temp;
+
+        // Preload next
+        preloadNextVideo();
+
+        // Increment index
+        currentVideoIndex = (currentVideoIndex + 1) % playlist.length;
+    }
+
+    // When one video ends, switch to the preloaded one
+    video.addEventListener('ended', switchVideos);
+    video2.addEventListener('ended', switchVideos);
+
+    // Remove loop attribute
     video.removeAttribute('loop');
 
     // Start playback
+    video.muted = true;
+    video.playsInline = true;
     playNextVideo();
 }
 

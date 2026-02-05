@@ -1896,11 +1896,20 @@ img {
     /* About Section with Video */
     .section-about {
         min-height: auto;
-        padding: var(--space-lg) 0 var(--space-xl) 0;
+        padding: var(--space-xs) 0 var(--space-xl) 0 !important;
+        /* Very reduced top */
     }
 
     .section-about .container {
         padding: 0 1rem;
+    }
+
+    .section-about .section-header {
+        margin-bottom: var(--space-md);
+    }
+
+    .section-about .section-tag {
+        margin-bottom: 0.5rem;
     }
 
     .about-grid {
@@ -1944,31 +1953,33 @@ img {
 
     /* Amenities Grid */
     .amenities-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        max-width: 100%;
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        max-width: 100% !important;
     }
 
     .amenity-card {
-        padding: 1.25rem;
+        padding: 1rem !important;
     }
 
     .amenity-icon {
-        width: 44px;
-        height: 44px;
+        width: 40px !important;
+        height: 40px !important;
+        margin-bottom: 0.75rem !important;
     }
 
     .amenity-icon svg {
-        width: 20px;
-        height: 20px;
+        width: 18px !important;
+        height: 18px !important;
     }
 
     .amenity-title {
-        font-size: 1rem;
+        font-size: 0.9375rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
     .amenity-text {
-        font-size: 0.8125rem;
+        font-size: 0.75rem !important;
     }
 
     /* Image frames */
