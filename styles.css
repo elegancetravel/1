@@ -429,6 +429,30 @@ img {
     color: var(--color-gold);
 }
 
+.btn-facebook {
+    background: #1877F2;
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-facebook:hover {
+    background: #166fe5;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(24, 119, 242, 0.4);
+}
+
+.btn-facebook.coming-soon {
+    opacity: 0.8;
+    cursor: default;
+}
+
+.btn-facebook.coming-soon:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+
 /* Hero Scroll Indicator */
 .hero-scroll {
     position: absolute;
