@@ -3165,6 +3165,22 @@ img {
     transition-delay: 3.0s;
 }
 
+[data-aos-delay="3500"] {
+    transition-delay: 3.5s;
+}
+
+[data-aos-delay="4000"] {
+    transition-delay: 4.0s;
+}
+
+[data-aos-delay="4300"] {
+    transition-delay: 4.3s;
+}
+
+[data-aos-delay="4600"] {
+    transition-delay: 4.6s;
+}
+
 [data-aos-delay="5500"] {
     transition-delay: 5.5s;
 }
