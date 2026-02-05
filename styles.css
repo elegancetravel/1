@@ -2787,13 +2787,13 @@ img {
     position: relative;
     min-height: 100vh;
     /* Ensure full screen */
-    padding: var(--space-3xl) 0;
-    /* Restore padding */
+    padding: var(--space-xl) 0 var(--space-3xl) 0;
+    /* Reduced top padding */
     background: transparent;
     overflow: hidden;
     display: flex;
-    align-items: center;
-    /* Center content vertically */
+    align-items: flex-start;
+    /* Align content to the top */
 }
 
 .scroll-video-container {
