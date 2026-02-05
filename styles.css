@@ -389,12 +389,12 @@ img {
 .btn-secondary {
     background: transparent;
     color: var(--color-white);
-    border: 1px solid var(--color-gray-500);
+    border: 1px solid var(--color-gold);
 }
 
 .btn-secondary:hover {
-    border-color: var(--color-gold);
-    color: var(--color-gold);
+    background: rgba(201, 169, 98, 0.1);
+    color: var(--color-white);
 }
 
 .btn-gold {
@@ -408,49 +408,49 @@ img {
 }
 
 .btn-whatsapp {
-    background: #25D366;
-    color: var(--color-white);
+    background: var(--gradient-gold);
+    color: var(--color-black);
 }
 
 .btn-whatsapp:hover {
-    background: #20bd5a;
     transform: translateY(-3px);
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    box-shadow: var(--shadow-gold);
 }
 
 .btn-call {
     background: transparent;
     color: var(--color-white);
-    border: 1px solid var(--color-gray-500);
+    border: 1px solid var(--color-gold);
 }
 
 .btn-call:hover {
-    border-color: var(--color-gold);
-    color: var(--color-gold);
+    background: rgba(201, 169, 98, 0.1);
+    transform: translateY(-3px);
 }
 
 .btn-facebook {
-    background: #1877F2;
-    color: var(--color-white);
-    position: relative;
-    overflow: hidden;
+    background: transparent;
+    color: var(--color-gray-300);
+    border: 1px solid rgba(201, 169, 98, 0.3);
 }
 
 .btn-facebook:hover {
-    background: #166fe5;
+    border-color: var(--color-gold);
+    color: var(--color-white);
     transform: translateY(-3px);
-    box-shadow: 0 4px 20px rgba(24, 119, 242, 0.4);
 }
 
 .btn-facebook.coming-soon {
-    opacity: 0.8;
-    cursor: default;
+    opacity: 0.6;
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .btn-facebook.coming-soon:hover {
     transform: none;
-    box-shadow: none;
+    cursor: not-allowed;
+    border-color: rgba(201, 169, 98, 0.3);
 }
+
 
 
 /* Hero Scroll Indicator */
