@@ -2779,3 +2779,252 @@ img {
         transform: scale(1.2) rotate(180deg);
     }
 }
+
+/* ========================================
+   SCROLL VIDEO SECTION (Autoplay Background)
+   ======================================== */
+.section-about {
+    position: relative;
+    min-height: 100vh;
+    /* Ensure full screen */
+    padding: var(--space-3xl) 0;
+    /* Restore padding */
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    /* Center content vertically */
+}
+
+.scroll-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.4);
+    z-index: 2;
+}
+
+/* Adjusting the content to sit on top */
+.section-about .container {
+    position: relative;
+    /* Normal flow */
+    z-index: 3;
+    width: 100%;
+}
+
+/* Override existing about grid for this view */
+.section-about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Full width text */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content {
+    color: var(--color-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    /* Center text for impact */
+}
+
+.about-content .about-text {
+    color: var(--color-gray-100);
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Horizontal features */
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.about-features .feature-item {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(201, 169, 98, 0.3);
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation for the content */
+.section-about .section-header,
+.section-about .about-content {
+    opacity: 1;
+}
+
+/* ========================================
+   ANIMATIONS (Custom AOS-like)
+   ======================================== */
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-30px);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(30px);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0);
+}
+
+/* Delays */
+[data-aos-delay="100"] {
+    transition-delay: 0.1s;
+}
+
+[data-aos-delay="200"] {
+    transition-delay: 0.2s;
+}
+
+[data-aos-delay="300"] {
+    transition-delay: 0.3s;
+}
+
+[data-aos-delay="400"] {
+    transition-delay: 0.4s;
+}
+
+[data-aos-delay="500"] {
+    transition-delay: 0.5s;
+}
+
+[data-aos-delay="1000"] {
+    transition-delay: 1.0s;
+}
+
+[data-aos-delay="1200"] {
+    transition-delay: 1.2s;
+}
+
+[data-aos-delay="1400"] {
+    transition-delay: 1.4s;
+}
+
+[data-aos-delay="1600"] {
+    transition-delay: 1.6s;
+}
+
+[data-aos-delay="1800"] {
+    transition-delay: 1.8s;
+}
+
+[data-aos-delay="2000"] {
+    transition-delay: 2.0s;
+}
+
+[data-aos-delay="2200"] {
+    transition-delay: 2.2s;
+}
+
+[data-aos-delay="2400"] {
+    transition-delay: 2.4s;
+}
+
+[data-aos-delay="2600"] {
+    transition-delay: 2.6s;
+}
+
+[data-aos-delay="2800"] {
+    transition-delay: 2.8s;
+}
+
+[data-aos-delay="3000"] {
+    transition-delay: 3.0s;
+}
+
+[data-aos-delay="5500"] {
+    transition-delay: 5.5s;
+}
+
+[data-aos-delay="9000"] {
+    transition-delay: 9.0s;
+}
+
+[data-aos-delay="9500"] {
+    transition-delay: 9.5s;
+}
+
+[data-aos-delay="10000"] {
+    transition-delay: 10.0s;
+}
+
+/* Word Reveal */
+.word-span {
+    opacity: 0;
+    display: inline-block;
+    transform: translateY(10px);
+    transition: none;
+    /* Controlled by animation */
+    margin-right: 0.3em;
+    /* Ensure spaces between words */
+}
+
+.word-span.visible {
+    animation: wordFadeIn 0.5s ease forwards;
+}
+
+@keyframes wordFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-aos-delay="200"] {
+    transition-delay: 0.2s;
+}
+
+[data-aos-delay="300"] {
+    transition-delay: 0.3s;
+}
+
+[data-aos-delay="400"] {
+    transition-delay: 0.4s;
+}
+
+[data-aos-delay="500"] {
+    transition-delay: 0.5s;
+}
+
+/* Override script.js animate-in logic if conflicting, but we can augment it */
+.animate-in {
+    opacity: 1 !important;
+    transform: translate(0) !important;
+}

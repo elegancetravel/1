@@ -86,8 +86,15 @@
 
     <!-- Sobre el Servicio -->
     <section class="section section-about" id="servicio">
+        <!-- Video Background Container -->
+        <div class="scroll-video-container">
+            <video id="scrollVideo" class="scroll-video" autoplay muted playsinline preload="auto">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up" data-aos-delay="1000">
                 <span class="section-tag">Experiencia Premium</span>
                 <h2 class="section-title">Sobre Nuestro Servicio</h2>
                 <div class="section-divider">
@@ -97,7 +104,7 @@
             <div class="about-grid">
                 <div class="about-content">
                     <p class="about-text lead">
-                        Somos un servicio exclusivo de <strong>Transporte Ejecutivo y Viajes VIP</strong> con base
+                        Somos un servicio exclusivo de <strong>Transporte Ejecutivo</strong> con base
                         en Tehuacán, Puebla. Nos especializamos en brindar una experiencia de viaje excepcional para
                         quienes demandan lo mejor.
                     </p>
@@ -107,7 +114,7 @@
                         sea que se trate de negocios o placer.
                     </p>
                     <div class="about-features">
-                        <div class="feature-item">
+                        <div class="feature-item" data-aos="fade-right" data-aos-delay="9000">
                             <div class="feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -118,7 +125,7 @@
                                 <p>Seguro de viajero incluido</p>
                             </div>
                         </div>
-                        <div class="feature-item">
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="9500">
                             <div class="feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <circle cx="12" cy="12" r="10" />
@@ -130,7 +137,7 @@
                                 <p>Llegamos siempre a tiempo</p>
                             </div>
                         </div>
-                        <div class="feature-item">
+                        <div class="feature-item" data-aos="fade-left" data-aos-delay="10000">
                             <div class="feature-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -145,12 +152,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <div class="image-frame">
-                        <img src="et_edited.jpg" alt="Automóvil Ejecutivo de Lujo" class="about-hero-image">
-                        <div class="image-accent"></div>
-                    </div>
-                </div>
+                <!-- Empty div to maintain grid structure if needed, or we can just make about-content full width in CSS for this section? 
+                     User said "remove image". I will leave a placeholder or adjust CSS. 
+                     For now, I'll remove the second column entirely from HTML and adjust CSS to make content full width or centered.
+                -->
             </div>
         </div>
     </section>

@@ -123,8 +123,9 @@ function initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
+                entry.target.classList.add('aos-animate');
+                // Optional: Stop observing if you want it to happen only once
+                // observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
@@ -132,9 +133,10 @@ function initScrollAnimations() {
     // Observe elements with data-aos attribute
     const animatedElements = document.querySelectorAll('[data-aos]');
     animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        // Remove inline styles set by previous logic to let CSS handle it
+        el.style.opacity = '';
+        el.style.transform = '';
+        el.style.transition = '';
         observer.observe(el);
     });
 
@@ -793,3 +795,127 @@ floatStyle.textContent = `
     }
 `;
 document.head.appendChild(floatStyle);
+
+// ========================================
+// BACKGROUND VIDEO PLAYLIST
+// ========================================
+function initBackgroundVideo() {
+    const video = document.getElementById('scrollVideo');
+    if (!video) return;
+
+    // Playlist configuration
+    const playlist = [
+        'mgv1.mp4',
+        'mgv2.mp4'
+    ];
+    let currentVideoIndex = 0;
+
+    // Ensure strictly muted and setup
+    video.muted = true;
+    video.playsInline = true;
+    video.autoplay = true; // Still try autoplay
+
+    // Function to play next video
+    function playNextVideo() {
+        video.src = playlist[currentVideoIndex];
+        const playPromise = video.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Autoplay likely prevented, waiting for interaction", error);
+            });
+        }
+
+        // Increment index and loop
+        currentVideoIndex++;
+        if (currentVideoIndex >= playlist.length) {
+            currentVideoIndex = 0;
+        }
+    }
+
+    // When one video ends, play the next
+    video.addEventListener('ended', playNextVideo);
+
+    // Remove the 'loop' attribute if it exists in HTML because we handle looping manually
+    video.removeAttribute('loop');
+
+    // Start playback
+    playNextVideo();
+}
+
+// ========================================
+// WORD BY WORD REVEAL
+// ========================================
+function initWordReveal() {
+    const textElements = document.querySelectorAll('.about-text');
+
+    textElements.forEach((el, index) => {
+        // Skip if already processed or not the target ones (optional check)
+        if (el.classList.contains('word-processed')) return;
+
+        // Save original HTML (to keep bold tags etc if possible, but splitting text is tricky with HTML tags)
+        // The user text has <strong> tags. Simple textContent split will kill HTML.
+        // Complex approach: Walk nodes. 
+        // Simpler approach: distinct words are usually text nodes.
+
+        // Let's use a specialized recursive walker or just simple approach if formatting isn't critical.
+        // formatting IS critical (<strong>).
+
+        processNode(el);
+        el.classList.add('word-processed');
+
+        // Observer to trigger
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Calculate start delay based on previous requirements
+                    // Header starts at 1000ms. 
+                    // First paragraph starts at 1600ms.
+                    // Second paragraph starts much later (e.g., 5000ms) to ensure the first one finishes.
+                    let baseDelay = 1600;
+                    if (index > 0) baseDelay = 5500;
+
+                    const words = entry.target.querySelectorAll('.word-span');
+                    words.forEach((word, i) => {
+                        // Much slower reveal: 80ms per word instead of 30ms
+                        word.style.animationDelay = `${baseDelay + (i * 80)}ms`;
+                        word.classList.add('visible');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(el);
+    });
+}
+
+function processNode(node) {
+    if (node.nodeType === 3) { // Text node
+        const text = node.nodeValue;
+        if (!text.trim()) return; // Skip empty text
+
+        const words = text.split(/(\s+)/); // Split keeping delimiters to preserve spacing? or just standard split
+        // standard split by space
+        const wordsArray = text.split(' ');
+
+        const fragment = document.createDocumentFragment();
+        wordsArray.forEach((word, i) => {
+            if (word.length === 0) return;
+            const span = document.createElement('span');
+            span.textContent = word + ' ';
+            span.className = 'word-span';
+            fragment.appendChild(span);
+        });
+
+        node.parentNode.replaceChild(fragment, node);
+    } else if (node.nodeType === 1) { // Element node
+        Array.from(node.childNodes).forEach(child => processNode(child));
+    }
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', () => {
+    initBackgroundVideo();
+    initWordReveal();
+});
