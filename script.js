@@ -888,10 +888,25 @@ function initBackgroundVideo() {
     // Remove loop attribute
     video.removeAttribute('loop');
 
-    // Start playback
-    video.muted = true;
-    video.playsInline = true;
-    playNextVideo();
+    // Start playback only when in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Initial play
+                if (!activeVideo.src) {
+                    playNextVideo();
+                } else {
+                    activeVideo.play().catch(e => console.log("Play failed:", e));
+                }
+            } else {
+                // Pause when out of view to save resources
+                activeVideo.pause();
+                nextVideo.pause();
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(container);
 }
 
 // ========================================
