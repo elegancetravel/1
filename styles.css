@@ -1796,14 +1796,14 @@ img {
     }
 
     .hero-title {
-        font-size: clamp(1.75rem, 8vw, 2.5rem);
+        font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
         line-height: 1.2;
-        margin-bottom: 2.5rem !important;
+        margin-bottom: 2rem !important;
     }
 
     .hero-subtitle {
-        font-size: 0.9rem;
-        line-height: 1.6;
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 
     .hero-scroll {
@@ -1821,16 +1821,16 @@ img {
 
     /* Section Headers */
     .section-title {
-        font-size: clamp(1.5rem, 6vw, 2rem);
+        font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
     }
 
     .section-tag {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         letter-spacing: 2px;
     }
 
     .section-description {
-        font-size: 0.9375rem;
+        font-size: 0.875rem;
     }
 
     /* About Section with Video */
@@ -3357,7 +3357,7 @@ img {
         flex-direction: row;
         text-align: left;
         align-items: flex-start;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .timeline-item:not(:last-child)::after {
@@ -3367,6 +3367,20 @@ img {
     .timeline-number {
         margin-bottom: 0;
         flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .timeline-icon {
+        margin: 0 0.5rem 0 0;
+        width: 28px;
+        height: 28px;
+    }
+
+    .timeline-icon svg {
+        width: 14px;
+        height: 14px;
     }
 
     .timeline-content {
