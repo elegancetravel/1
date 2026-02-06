@@ -244,6 +244,57 @@ img {
     transition: all var(--transition-base);
 }
 
+/* Language Toggle */
+.lang-toggle-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 1.5rem;
+}
+
+.lang-btn {
+    background: rgba(201, 169, 98, 0.1);
+    border: 1px solid rgba(201, 169, 98, 0.3);
+    color: var(--color-gold);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+}
+
+.lang-btn:hover {
+    background: var(--color-gold);
+    color: var(--color-black);
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-gold);
+}
+
+@media (max-width: 992px) {
+    .lang-toggle-container {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .lang-toggle-container {
+        margin-left: auto;
+        margin-right: 0.5rem;
+        order: 2; /* Ensure it stays visible near the menu toggle */
+    }
+    
+    .nav-toggle {
+        order: 3;
+    }
+}
+
 /* ========================================
    HERO SECTION
    ======================================== */

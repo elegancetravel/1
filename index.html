@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html-root">
 
 <head>
     <meta charset="UTF-8">
@@ -29,13 +29,18 @@
                 <span></span>
                 <span></span>
             </button>
+            <div class="lang-toggle-container">
+                <button id="langToggle" class="lang-btn" aria-label="Cambiar idioma">
+                    <span id="langText">EN</span>
+                </button>
+            </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#servicio" class="nav-link">Servicio</a></li>
-                <li><a href="#amenidades" class="nav-link">Amenidades</a></li>
-                <li><a href="#viajes" class="nav-link">Viajes</a></li>
-                <li><a href="#cotizacion" class="nav-link">Cotización</a></li>
-                <li><a href="#seguridad" class="nav-link">Seguridad</a></li>
-                <li><a href="#contacto" class="nav-link nav-cta">Contacto</a></li>
+                <li><a href="#servicio" class="nav-link" data-i18n="nav-service">Servicio</a></li>
+                <li><a href="#amenidades" class="nav-link" data-i18n="nav-amenities">Amenidades</a></li>
+                <li><a href="#viajes" class="nav-link" data-i18n="nav-trips">Viajes</a></li>
+                <li><a href="#cotizacion" class="nav-link" data-i18n="nav-quote">Cotización</a></li>
+                <li><a href="#seguridad" class="nav-link" data-i18n="nav-security">Seguridad</a></li>
+                <li><a href="#contacto" class="nav-link nav-cta" data-i18n="nav-contact">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -47,13 +52,13 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-icon">★</span>
-                <span>Servicio Premium</span>
+                <span data-i18n="hero-badge">Servicio Premium</span>
             </div>
             <h1 class="hero-title">
-                <span class="title-line">Viajes Ejecutivos</span>
+                <span class="title-line" data-i18n="hero-title-line">Viajes Ejecutivos</span>
                 <span class="title-accent">VIP</span>
             </h1>
-            <p class="hero-subtitle">Lujo, confort y seguridad en cada trayecto</p>
+            <p class="hero-subtitle" data-i18n="hero-subtitle">Lujo, confort y seguridad en cada trayecto</p>
             <div class="hero-location">
                 <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -63,7 +68,7 @@
             </div>
             <div class="hero-cta">
                 <a href="#contacto" class="btn btn-primary">
-                    <span>Cotiza Tu Viaje</span>
+                    <span data-i18n="btn-quote">Cotiza Tu Viaje</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
@@ -73,12 +78,12 @@
                         <path
                             d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
-                    <span>Llamar Ahora</span>
+                    <span data-i18n="btn-call">Llamar Ahora</span>
                 </a>
             </div>
         </div>
         <div class="hero-scroll">
-            <span>Descubre más</span>
+            <span data-i18n="hero-scroll">Descubre más</span>
             <div class="scroll-indicator"></div>
         </div>
     </section>
@@ -94,20 +99,20 @@
 
         <div class="container">
             <div class="section-header" data-aos="fade-up" data-aos-delay="1000">
-                <span class="section-tag">Experiencia Premium</span>
-                <h2 class="section-title">Sobre Nuestro Servicio</h2>
+                <span class="section-tag" data-i18n="about-tag">Experiencia Premium</span>
+                <h2 class="section-title" data-i18n="about-title">Sobre Nuestro Servicio</h2>
                 <div class="section-divider">
                     <span class="divider-diamond">◆</span>
                 </div>
             </div>
             <div class="about-grid">
                 <div class="about-content">
-                    <p class="about-text lead">
+                    <p class="about-text lead" data-i18n="about-lead">
                         Somos un servicio exclusivo de <strong>Transporte Ejecutivo</strong> con base
                         en Tehuacán, Puebla. Nos especializamos en brindar una experiencia de viaje excepcional para
                         quienes demandan lo mejor.
                     </p>
-                    <p class="about-text">
+                    <p class="about-text" data-i18n="about-p2">
                         Cada trayecto está diseñado para ofrecerle el máximo confort, privacidad y seguridad. Nuestros
                         vehículos de lujo cuentan con todas las amenidades que necesita para disfrutar su viaje, ya
                         sea que se trate de negocios o placer.
@@ -120,8 +125,8 @@
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h4>Seguridad Total</h4>
-                                <p>Seguro de viajero incluido</p>
+                                <h4 data-i18n="feature-security-title">Seguridad Total</h4>
+                                <p data-i18n="feature-security-p">Seguro de viajero incluido</p>
                             </div>
                         </div>
                         <div class="feature-item" data-aos="fade-up" data-aos-delay="4300">
@@ -132,8 +137,8 @@
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h4>Puntualidad</h4>
-                                <p>Llegamos siempre a tiempo</p>
+                                <h4 data-i18n="feature-punctuality-title">Puntualidad</h4>
+                                <p data-i18n="feature-punctuality-p">Llegamos siempre a tiempo</p>
                             </div>
                         </div>
                         <div class="feature-item" data-aos="fade-left" data-aos-delay="4600">
@@ -145,8 +150,8 @@
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h4>Discreción</h4>
-                                <p>Privacidad garantizada</p>
+                                <h4 data-i18n="feature-discretion-title">Discreción</h4>
+                                <p data-i18n="feature-discretion-p">Privacidad garantizada</p>
                             </div>
                         </div>
                     </div>
@@ -163,12 +168,13 @@
     <section class="section section-amenities" id="amenidades">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Comodidades a Bordo</span>
-                <h2 class="section-title">Amenidades Premium</h2>
+                <span class="section-tag" data-i18n="amenities-tag">Comodidades a Bordo</span>
+                <h2 class="section-title" data-i18n="amenities-title">Amenidades Premium</h2>
                 <div class="section-divider">
                     <span class="divider-diamond">◆</span>
                 </div>
-                <p class="section-description">Disfrute de una experiencia de viaje de primer nivel con todas las
+                <p class="section-description" data-i18n="amenities-desc">Disfrute de una experiencia de viaje de primer
+                    nivel con todas las
                     comodidades incluidas</p>
             </div>
             <div class="amenities-grid">
@@ -180,8 +186,8 @@
                             <path d="M10 10h8M10 14h5" />
                         </svg>
                     </div>
-                    <h3 class="amenity-title">Asientos de Piel</h3>
-                    <p class="amenity-text">Confort supremo en cada kilómetro</p>
+                    <h3 class="amenity-title" data-i18n="amenity-seats-title">Asientos de Piel</h3>
+                    <p class="amenity-text" data-i18n="amenity-seats-p">Confort supremo en cada kilómetro</p>
                 </div>
                 <div class="amenity-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="amenity-icon">
@@ -190,8 +196,8 @@
                             <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
                         </svg>
                     </div>
-                    <h3 class="amenity-title">Quemacocos</h3>
-                    <p class="amenity-text">Vista panorámica del cielo</p>
+                    <h3 class="amenity-title" data-i18n="amenity-sunroof-title">Quemacocos</h3>
+                    <p class="amenity-text" data-i18n="amenity-sunroof-p">Vista panorámica del cielo</p>
                 </div>
                 <div class="amenity-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="amenity-icon">
@@ -202,8 +208,8 @@
                             <circle cx="12" cy="20" r="1" />
                         </svg>
                     </div>
-                    <h3 class="amenity-title">WiFi a Bordo</h3>
-                    <p class="amenity-text">Conexión de alta velocidad</p>
+                    <h3 class="amenity-title" data-i18n="amenity-wifi-title">WiFi a Bordo</h3>
+                    <p class="amenity-text" data-i18n="amenity-wifi-p">Conexión de alta velocidad</p>
                 </div>
                 <div class="amenity-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="amenity-icon">
@@ -215,8 +221,8 @@
                             <line x1="14" y1="1" x2="14" y2="4" />
                         </svg>
                     </div>
-                    <h3 class="amenity-title">Snacks Incluidos</h3>
-                    <p class="amenity-text">Refrigerios premium durante el viaje</p>
+                    <h3 class="amenity-title" data-i18n="amenity-snacks-title">Snacks Incluidos</h3>
+                    <p class="amenity-text" data-i18n="amenity-snacks-p">Refrigerios premium durante el viaje</p>
                 </div>
                 <div class="amenity-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="amenity-icon">
@@ -226,8 +232,8 @@
                             <line x1="12" y1="17" x2="12" y2="21" />
                         </svg>
                     </div>
-                    <h3 class="amenity-title">Pantallas HD</h3>
-                    <p class="amenity-text">En reposacabezas con internet</p>
+                    <h3 class="amenity-title" data-i18n="amenity-screens-title">Pantallas HD</h3>
+                    <p class="amenity-text" data-i18n="amenity-screens-p">En reposacabezas con internet</p>
                 </div>
 
                 <div class="amenity-card" data-aos="fade-up" data-aos-delay="600">
@@ -238,8 +244,8 @@
                             <polygon points="10 8 16 12 10 16 10 8" />
                         </svg>
                     </div>
-                    <h3 class="amenity-title">Entretenimiento Completo</h3>
-                    <p class="amenity-text">Películas, Caricaturas, Conciertos & Youtube</p>
+                    <h3 class="amenity-title" data-i18n="amenity-ent-title">Entretenimiento Completo</h3>
+                    <p class="amenity-text" data-i18n="amenity-ent-p">Películas, Caricaturas, Conciertos & Youtube</p>
                 </div>
             </div>
         </div>
@@ -249,8 +255,8 @@
     <section class="section section-trips" id="viajes">
         <div class="container">
             <div class="section-header section-header-light">
-                <span class="section-tag">Destinos</span>
-                <h2 class="section-title">Viajes Foráneos y Ejecutivos</h2>
+                <span class="section-tag" data-i18n="trips-tag">Destinos</span>
+                <h2 class="section-title" data-i18n="trips-title">Viajes Foráneos y Ejecutivos</h2>
                 <div class="section-divider">
                     <span class="divider-diamond">◆</span>
                 </div>
@@ -265,8 +271,9 @@
                                     d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                             </svg>
                         </div>
-                        <h3>Viajes Fuera de la Ciudad</h3>
-                        <p>Especialistas en traslados foráneos desde Tehuacán hacia cualquier destino. Aeropuertos,
+                        <h3 data-i18n="trips-city-title">Viajes Fuera de la Ciudad</h3>
+                        <p data-i18n="trips-city-p">Especialistas en traslados foráneos desde Tehuacán hacia cualquier
+                            destino. Aeropuertos,
                             ciudades cercanas, eventos corporativos o familiares.</p>
                     </div>
                     <div class="trips-card">
@@ -277,8 +284,9 @@
                                 <path d="M9 14l2 2 4-4" />
                             </svg>
                         </div>
-                        <h3>Múltiples Destinos</h3>
-                        <p>Planificamos rutas con paradas en diferentes puntos según sus necesidades. Un solo viaje,
+                        <h3 data-i18n="trips-dest-title">Múltiples Destinos</h3>
+                        <p data-i18n="trips-dest-p">Planificamos rutas con paradas en diferentes puntos según sus
+                            necesidades. Un solo viaje,
                             múltiples destinos, sin complicaciones.</p>
                     </div>
                     <div class="trips-card">
@@ -290,8 +298,9 @@
                                 <line x1="3" y1="10" x2="21" y2="10" />
                             </svg>
                         </div>
-                        <h3>Viaje Redondo</h3>
-                        <p>Servicio de ida y vuelta coordinado. Nos adaptamos a sus horarios y le esperamos el tiempo
+                        <h3 data-i18n="trips-round-title">Viaje Redondo</h3>
+                        <p data-i18n="trips-round-p">Servicio de ida y vuelta coordinado. Nos adaptamos a sus horarios y
+                            le esperamos el tiempo
                             necesario.</p>
                     </div>
                 </div>
@@ -320,7 +329,7 @@
                             <span class="dot dot-4" title="Veracruz"></span>
                         </div>
                     </div>
-                    <p class="map-caption">Conectamos Tehuacán con todos los destinos</p>
+                    <p class="map-caption" data-i18n="trips-map-caption">Conectamos Tehuacán con todos los destinos</p>
                 </div>
             </div>
         </div>
@@ -330,12 +339,13 @@
     <section class="section section-quote" id="cotizacion">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Proceso Simple</span>
-                <h2 class="section-title">Cómo Funciona la Cotización</h2>
+                <span class="section-tag" data-i18n="quote-tag">Proceso Simple</span>
+                <h2 class="section-title" data-i18n="quote-title">Cómo Funciona la Cotización</h2>
                 <div class="section-divider">
                     <span class="divider-diamond">◆</span>
                 </div>
-                <p class="section-description">Obtén tu cotización personalizada en minutos. Proceso 100% transparente.
+                <p class="section-description" data-i18n="quote-desc">Obtén tu cotización personalizada en minutos.
+                    Proceso 100% transparente.
                 </p>
             </div>
             <div class="quote-timeline">
@@ -349,8 +359,8 @@
                                 <circle cx="12" cy="10" r="3" />
                             </svg>
                         </div>
-                        <h3>Lugar de Salida</h3>
-                        <p>Indícanos desde dónde partes</p>
+                        <h3 data-i18n="quote-step1-title">Lugar de Salida</h3>
+                        <p data-i18n="quote-step1-p">Indícanos desde dónde partes</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -365,8 +375,8 @@
                                 <circle cx="12" cy="15" r="2" />
                             </svg>
                         </div>
-                        <h3>Fecha y Hora</h3>
-                        <p>Cuándo necesitas el servicio</p>
+                        <h3 data-i18n="quote-step2-title">Fecha y Hora</h3>
+                        <p data-i18n="quote-step2-p">Cuándo necesitas el servicio</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -378,8 +388,8 @@
                                 <path d="M12 8v8M8 12h8" />
                             </svg>
                         </div>
-                        <h3>Destino Final</h3>
-                        <p>A dónde quieres llegar</p>
+                        <h3 data-i18n="quote-step3-title">Destino Final</h3>
+                        <p data-i18n="quote-step3-p">A dónde quieres llegar</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -391,8 +401,8 @@
                                 <path d="M12 6v6l4 2" />
                             </svg>
                         </div>
-                        <h3>Paradas Adicionales</h3>
-                        <p>¿Necesitas visitar varios puntos?</p>
+                        <h3 data-i18n="quote-step4-title">Paradas Adicionales</h3>
+                        <p data-i18n="quote-step4-p">¿Necesitas visitar varios puntos?</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -404,20 +414,20 @@
                                 <polyline points="9 22 9 12 15 12 15 22" />
                             </svg>
                         </div>
-                        <h3>Regreso</h3>
-                        <p>Hora o día de retorno</p>
+                        <h3 data-i18n="quote-step5-title">Regreso</h3>
+                        <p data-i18n="quote-step5-p">Hora o día de retorno</p>
                     </div>
                 </div>
             </div>
             <div class="quote-cta">
-                <p class="quote-message">¿Listo para tu viaje ejecutivo?</p>
+                <p class="quote-message" data-i18n="quote-message">¿Listo para tu viaje ejecutivo?</p>
                 <a href="https://wa.me/522381199898?text=Hola,%20me%20gustaría%20cotizar%20un%20viaje%20ejecutivo"
                     class="btn btn-gold" target="_blank" rel="noopener">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                     </svg>
-                    <span>Cotizar por WhatsApp</span>
+                    <span data-i18n="btn-quote-wa">Cotizar por WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -427,8 +437,8 @@
     <section class="section section-security" id="seguridad">
         <div class="container">
             <div class="section-header section-header-light">
-                <span class="section-tag">Tu Tranquilidad</span>
-                <h2 class="section-title">Seguridad y Confianza</h2>
+                <span class="section-tag" data-i18n="security-tag">Tu Tranquilidad</span>
+                <h2 class="section-title" data-i18n="security-title">Seguridad y Confianza</h2>
                 <div class="section-divider">
                     <span class="divider-diamond">◆</span>
                 </div>
@@ -436,8 +446,9 @@
             <div class="security-grid">
                 <div class="security-card">
                     <div class="security-badge">00</div>
-                    <h3>Verificación Vehicular</h3>
-                    <p>Vehículo con verificación <strong>00</strong>, garantizando las mejores condiciones mecánicas y
+                    <h3 data-i18n="sec-card1-title">Verificación Vehicular</h3>
+                    <p data-i18n="sec-card1-p">Vehículo con verificación <strong>00</strong>, garantizando las mejores
+                        condiciones mecánicas y
                         ambientales.</p>
                 </div>
                 <div class="security-card">
@@ -448,8 +459,9 @@
                             <path d="M16 11l2 2 4-4" />
                         </svg>
                     </div>
-                    <h3>Chofer Certificado</h3>
-                    <p>Conductor <strong>profesional y certificado</strong> con años de experiencia en transporte
+                    <h3 data-i18n="sec-card2-title">Chofer Certificado</h3>
+                    <p data-i18n="sec-card2-p">Conductor <strong>profesional y certificado</strong> con años de
+                        experiencia en transporte
                         ejecutivo.</p>
                 </div>
                 <div class="security-card">
@@ -459,8 +471,9 @@
                             <path d="M9 12l2 2 4-4" />
                         </svg>
                     </div>
-                    <h3>Seguro de Viajero</h3>
-                    <p><strong>Seguro incluido</strong> en cada viaje. Tu protección es nuestra prioridad número uno.
+                    <h3 data-i18n="sec-card3-title">Seguro de Viajero</h3>
+                    <p data-i18n="sec-card3-p"><strong>Seguro incluido</strong> en cada viaje. Tu protección es nuestra
+                        prioridad número uno.
                     </p>
                 </div>
                 <div class="security-card">
@@ -471,8 +484,9 @@
                             <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
                         </svg>
                     </div>
-                    <h3>Seguimiento GPS</h3>
-                    <p><strong>Sistemas ADAS & DMS</strong> con monitoreo en tiempo real y detección de fatiga.</p>
+                    <h3 data-i18n="sec-card4-title">Seguimiento GPS</h3>
+                    <p data-i18n="sec-card4-p"><strong>Sistemas ADAS & DMS</strong> con monitoreo en tiempo real y
+                        detección de fatiga.</p>
                 </div>
             </div>
             <div class="trust-badges">
@@ -481,7 +495,7 @@
                         <circle cx="12" cy="12" r="10" />
                         <polyline points="12 6 12 12 16 14" />
                     </svg>
-                    <span>Puntualidad Garantizada</span>
+                    <span data-i18n="trust-item1">Puntualidad Garantizada</span>
                 </div>
                 <div class="trust-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -490,14 +504,14 @@
                         <line x1="19" y1="8" x2="19" y2="14" />
                         <line x1="22" y1="11" x2="16" y2="11" />
                     </svg>
-                    <span>Atención Personalizada</span>
+                    <span data-i18n="trust-item2">Atención Personalizada</span>
                 </div>
                 <div class="trust-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                     </svg>
-                    <span>Máxima Discreción</span>
+                    <span data-i18n="trust-item3">Máxima Discreción</span>
                 </div>
             </div>
         </div>
@@ -507,16 +521,17 @@
     <section class="section section-contact" id="contacto">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Contáctanos</span>
-                <h2 class="section-title">Cotiza Tu Viaje Ejecutivo Ahora</h2>
+                <span class="section-tag" data-i18n="contact-tag">Contáctanos</span>
+                <h2 class="section-title" data-i18n="contact-title">Cotiza Tu Viaje Ejecutivo Ahora</h2>
                 <div class="section-divider">
                     <span class="divider-diamond">◆</span>
                 </div>
             </div>
             <div class="contact-cta-box">
                 <div class="cta-content">
-                    <h3>¿Listo para viajar con estilo?</h3>
-                    <p>Contáctanos ahora y recibe tu cotización personalizada en minutos. Sin compromisos.
+                    <h3 data-i18n="contact-p1">¿Listo para viajar con estilo?</h3>
+                    <p data-i18n="contact-p2">Contáctanos ahora y recibe tu cotización personalizada en minutos. Sin
+                        compromisos.
                     </p>
                     <div class="cta-buttons">
                         <a href="https://wa.me/522381199898?text=Hola,%20me%20gustaría%20cotizar%20un%20viaje%20ejecutivo"
@@ -525,21 +540,21 @@
                                 <path
                                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                             </svg>
-                            <span>Escribir por WhatsApp</span>
+                            <span data-i18n="btn-contact-wa">Escribir por WhatsApp</span>
                         </a>
                         <a href="tel:2381199898" class="btn btn-call">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
-                            <span>Llamar Ahora</span>
+                            <span data-i18n="btn-contact-call">Llamar Ahora</span>
                         </a>
                         <a href="#" class="btn btn-facebook coming-soon" onclick="event.preventDefault()">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                             </svg>
-                            <span>Facebook (Próximamente)</span>
+                            <span data-i18n="btn-contact-fb">Facebook (Próximamente)</span>
                         </a>
                     </div>
                 </div>
@@ -555,7 +570,7 @@
     </div>
     <div class="footer-bottom">
         <div class="container">
-            <p>&copy;2026 Elegance Travel. Todos los derechos reservados.</p>
+            <p data-i18n="footer-rights">&copy;2026 Elegance Travel. Todos los derechos reservados.</p>
         </div>
     </div>
     </footer>

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initSmoothScroll();
     initScrollAnimations();
     initHeroParticles();
+    initI18n(); // Initialize language support
 });
 
 // ========================================
@@ -985,3 +986,218 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackgroundVideo();
     initWordReveal();
 });
+
+// ========================================
+// MULTI-LANGUAGE SUPPORT (ES/EN)
+// ========================================
+
+const translations = {
+    es: {
+        "nav-service": "Servicio",
+        "nav-amenities": "Amenidades",
+        "nav-trips": "Viajes",
+        "nav-quote": "Cotización",
+        "nav-security": "Seguridad",
+        "nav-contact": "Contacto",
+        "hero-badge": "Servicio Premium",
+        "hero-title-line": "Viajes Ejecutivos",
+        "hero-subtitle": "Lujo, confort y seguridad en cada trayecto",
+        "btn-quote": "Cotiza Tu Viaje",
+        "btn-call": "Llamar Ahora",
+        "hero-scroll": "Descubre más",
+        "about-tag": "Experiencia Premium",
+        "about-title": "Sobre Nuestro Servicio",
+        "about-lead": "Somos un servicio exclusivo de <strong>Transporte Ejecutivo</strong> con base en Tehuacán, Puebla. Nos especializamos en brindar una experiencia de viaje excepcional para quienes demandan lo mejor.",
+        "about-p2": "Cada trayecto está diseñado para ofrecerle el máximo confort, privacidad y seguridad. Nuestros vehículos de lujo cuentan con todas las amenidades que necesita para disfrutar su viaje, ya sea que se trate de negocios o placer.",
+        "feature-security-title": "Seguridad Total",
+        "feature-security-p": "Seguro de viajero incluido",
+        "feature-punctuality-title": "Puntualidad",
+        "feature-punctuality-p": "Llegamos siempre a tiempo",
+        "feature-discretion-title": "Discreción",
+        "feature-discretion-p": "Privacidad garantizada",
+        "amenities-tag": "Comodidades a Bordo",
+        "amenities-title": "Amenidades Premium",
+        "amenities-desc": "Disfrute de una experiencia de viaje de primer nivel con todas las comodidades incluidas",
+        "amenity-seats-title": "Asientos de Piel",
+        "amenity-seats-p": "Confort supremo en cada kilómetro",
+        "amenity-sunroof-title": "Quemacocos",
+        "amenity-sunroof-p": "Vista panorámica del cielo",
+        "amenity-wifi-title": "WiFi a Bordo",
+        "amenity-wifi-p": "Conexión de alta velocidad",
+        "amenity-snacks-title": "Snacks Incluidos",
+        "amenity-snacks-p": "Refrigerios premium durante el viaje",
+        "amenity-screens-title": "Pantallas HD",
+        "amenity-screens-p": "En reposacabezas con internet",
+        "amenity-ent-title": "Entretenimiento Completo",
+        "amenity-ent-p": "Películas, Caricaturas, Conciertos & Youtube",
+        "trips-tag": "Destinos",
+        "trips-title": "Viajes Foráneos y Ejecutivos",
+        "trips-city-title": "Viajes Fuera de la Ciudad",
+        "trips-city-p": "Especialistas en traslados foráneos desde Tehuacán hacia cualquier destino. Aeropuertos, ciudades cercanas, eventos corporativos o familiares.",
+        "trips-dest-title": "Múltiples Destinos",
+        "trips-dest-p": "Planificamos rutas con paradas en diferentes puntos según sus necesidades. Un solo viaje, múltiples destinos, sin complicaciones.",
+        "trips-round-title": "Viaje Redondo",
+        "trips-round-p": "Servicio de ida y vuelta coordinado. Nos adaptamos a sus horarios y le esperamos el tiempo necesario.",
+        "trips-map-caption": "Conectamos Tehuacán con todos los destinos",
+        "quote-tag": "Proceso Simple",
+        "quote-title": "Cómo Funciona la Cotización",
+        "quote-desc": "Obtén tu cotización personalizada en minutos. Proceso 100% transparente.",
+        "quote-step1-title": "Lugar de Salida",
+        "quote-step1-p": "Indícanos desde dónde partes",
+        "quote-step2-title": "Fecha y Hora",
+        "quote-step2-p": "Cuándo necesitas el servicio",
+        "quote-step3-title": "Destino Final",
+        "quote-step3-p": "A dónde quieres llegar",
+        "quote-step4-title": "Paradas Adicionales",
+        "quote-step4-p": "¿Necesitas visitar varios puntos?",
+        "quote-step5-title": "Regreso",
+        "quote-step5-p": "Hora o día de retorno",
+        "quote-message": "¿Listo para tu viaje ejecutivo?",
+        "btn-quote-wa": "Cotizar por WhatsApp",
+        "security-tag": "Tu Tranquilidad",
+        "security-title": "Seguridad y Confianza",
+        "sec-card1-title": "Verificación Vehicular",
+        "sec-card1-p": "Vehículo con verificación <strong>00</strong>, garantizando las mejores condiciones mecánicas y ambientales.",
+        "sec-card2-title": "Chofer Certificado",
+        "sec-card2-p": "Conductor <strong>profesional y certificado</strong> con años de experiencia en transporte ejecutivo.",
+        "sec-card3-title": "Seguro de Viajero",
+        "sec-card3-p": "<strong>Seguro incluido</strong> en cada viaje. Tu protección es nuestra prioridad número uno.",
+        "sec-card4-title": "Seguimiento GPS",
+        "sec-card4-p": "<strong>Sistemas ADAS & DMS</strong> con monitoreo en tiempo real y detección de fatiga.",
+        "trust-item1": "Puntualidad Garantizada",
+        "trust-item2": "Atención Personalizada",
+        "trust-item3": "Máxima Discreción",
+        "contact-tag": "Contáctanos",
+        "contact-title": "Cotiza Tu Viaje Ejecutivo Ahora",
+        "contact-p1": "¿Listo para viajar con estilo?",
+        "contact-p2": "Contáctanos ahora y recibe tu cotización personalizada en minutos. Sin compromisos.",
+        "btn-contact-wa": "Escribir por WhatsApp",
+        "btn-contact-call": "Llamar Ahora",
+        "btn-contact-fb": "Facebook (Próximamente)",
+        "footer-rights": "&copy;2026 Elegance Travel. Todos los derechos reservados."
+    },
+    en: {
+        "nav-service": "Service",
+        "nav-amenities": "Amenities",
+        "nav-trips": "Trips",
+        "nav-quote": "Quote",
+        "nav-security": "Security",
+        "nav-contact": "Contact",
+        "hero-badge": "Premium Service",
+        "hero-title-line": "Executive Travel",
+        "hero-subtitle": "Luxury, comfort and safety in every journey",
+        "btn-quote": "Quote Your Trip",
+        "btn-call": "Call Now",
+        "hero-scroll": "Discover more",
+        "about-tag": "Premium Experience",
+        "about-title": "About Our Service",
+        "about-lead": "We are an exclusive <strong>Executive Transportation</strong> service based in Tehuacán, Puebla. We specialize in providing an exceptional travel experience for those who demand the best.",
+        "about-p2": "Each journey is designed to offer maximum comfort, privacy and safety. Our luxury vehicles have all the amenities you need to enjoy your trip, whether for business or pleasure.",
+        "feature-security-title": "Total Safety",
+        "feature-security-p": "Traveler insurance included",
+        "feature-punctuality-title": "Punctuality",
+        "feature-punctuality-p": "We always arrive on time",
+        "feature-discretion-title": "Discretion",
+        "feature-discretion-p": "Privacy guaranteed",
+        "amenities-tag": "Amenities on Board",
+        "amenities-title": "Premium Amenities",
+        "amenities-desc": "Enjoy a top-tier travel experience with all amenities included",
+        "amenity-seats-title": "Leather Seats",
+        "amenity-seats-p": "Supreme comfort in every mile",
+        "amenity-sunroof-title": "Sunroof",
+        "amenity-sunroof-p": "Panoramic sky view",
+        "amenity-wifi-title": "Onboard WiFi",
+        "amenity-wifi-p": "High-speed connection",
+        "amenity-snacks-title": "Snacks Included",
+        "amenity-snacks-p": "Premium snacks during the journey",
+        "amenity-screens-title": "HD Screens",
+        "amenity-screens-p": "In headrests with internet",
+        "amenity-ent-title": "Full Entertainment",
+        "amenity-ent-p": "Movies, Cartoons, Concerts & Youtube",
+        "trips-tag": "Destinations",
+        "trips-title": "Foreign and Executive Trips",
+        "trips-city-title": "Out-of-Town Trips",
+        "trips-city-p": "Specialists in foreign transfers from Tehuacán to any destination. Airports, nearby cities, corporate or family events.",
+        "trips-dest-title": "Multiple Destinations",
+        "trips-dest-p": "We plan routes with stops at different points according to your needs. A single trip, multiple destinations, no complications.",
+        "trips-round-title": "Round Trip",
+        "trips-round-p": "Coordinated round-trip service. We adapt to your schedules and wait as long as necessary.",
+        "trips-map-caption": "We connect Tehuacán with all destinations",
+        "quote-tag": "Simple Process",
+        "quote-title": "How Quotation Works",
+        "quote-desc": "Get your personalized quote in minutes. 100% transparent process.",
+        "quote-step1-title": "Starting Point",
+        "quote-step1-p": "Tell us where you are leaving from",
+        "quote-step2-title": "Date and Time",
+        "quote-step2-p": "When you need the service",
+        "quote-step3-title": "Final Destination",
+        "quote-step3-p": "Where you want to go",
+        "quote-step4-title": "Additional Stops",
+        "quote-step4-p": "Do you need to visit several points?",
+        "quote-step5-title": "Return",
+        "quote-step5-p": "Return time or day",
+        "quote-message": "Ready for your executive trip?",
+        "btn-quote-wa": "Quote via WhatsApp",
+        "security-tag": "Your Peace of Mind",
+        "security-title": "Safety and Trust",
+        "sec-card1-title": "Vehicle Verification",
+        "sec-card1-p": "Vehicle with <strong>00</strong> verification, guaranteeing the best mechanical and environmental conditions.",
+        "sec-card2-title": "Certified Driver",
+        "sec-card2-p": "<strong>Professional and certified</strong> driver with years of experience in executive transportation.",
+        "sec-card3-title": "Traveler Insurance",
+        "sec-card3-p": "<strong>Insurance included</strong> in every trip. Your protection is our number one priority.",
+        "sec-card4-title": "GPS Tracking",
+        "sec-card4-p": "<strong>ADAS & DMS systems</strong> with real-time monitoring and fatigue detection.",
+        "trust-item1": "Guaranteed Punctuality",
+        "trust-item2": "Personalized Attention",
+        "trust-item3": "Maximum Discretion",
+        "contact-tag": "Contact Us",
+        "contact-title": "Quote Your Executive Trip Now",
+        "contact-p1": "Ready to travel with style?",
+        "contact-p2": "Contact us now and receive your personalized quote in minutes. No commitments.",
+        "btn-contact-wa": "Write via WhatsApp",
+        "btn-contact-call": "Call Now",
+        "btn-contact-fb": "Facebook (Coming Soon)",
+        "footer-rights": "&copy;2026 Elegance Travel. All rights reserved."
+    }
+};
+
+function initI18n() {
+    const langToggle = document.getElementById("langToggle");
+    const langText = document.getElementById("langText");
+    const htmlRoot = document.getElementById("html-root");
+
+    // Check for saved language or default to ES
+    let currentLang = localStorage.getItem("preferredLanguage") || "es";
+
+    function updateContent(lang) {
+        const elements = document.querySelectorAll("[data-i18n]");
+        elements.forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Update toggle text (show opposite)
+        if (langText) langText.textContent = lang === "es" ? "EN" : "ES";
+
+        // Update html lang attribute
+        if (htmlRoot) htmlRoot.setAttribute("lang", lang);
+
+        // Save preference
+        localStorage.setItem("preferredLanguage", lang);
+        currentLang = lang;
+    }
+
+    // Initial update
+    updateContent(currentLang);
+
+    // Handle click
+    if (langToggle) {
+        langToggle.addEventListener("click", function () {
+            const newLang = currentLang === "es" ? "en" : "es";
+            updateContent(newLang);
+        });
+    }
+}
