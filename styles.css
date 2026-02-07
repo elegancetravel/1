@@ -253,28 +253,61 @@ img {
 }
 
 .lang-btn {
-    background: rgba(201, 169, 98, 0.1);
-    border: 1px solid rgba(201, 169, 98, 0.3);
-    color: var(--color-gold);
-    padding: 4px 8px;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(201, 169, 98, 0.5);
+    color: var(--color-white);
+    padding: 6px 12px;
     border-radius: var(--radius-sm);
     cursor: pointer;
     font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.85rem;
+    font-weight: 700;
     letter-spacing: 1px;
     transition: all var(--transition-base);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
+    min-width: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.lang-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.lang-btn.lang-es {
+    background-image: url('https://flagcdn.com/w80/mx.png');
+}
+
+.lang-btn.lang-en {
+    background-image: url('https://flagcdn.com/w80/us.png');
 }
 
 .lang-btn:hover {
-    background: var(--color-gold);
-    color: var(--color-black);
+    transform: translateY(-2px);
     border-color: var(--color-gold);
     box-shadow: var(--shadow-gold);
+}
+
+.lang-btn:hover::before {
+    background: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 992px) {

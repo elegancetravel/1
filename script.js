@@ -1179,12 +1179,22 @@ function initI18n() {
             }
         });
 
-        // Update toggle text (show opposite)
-        if (langText) langText.textContent = lang === "es" ? "EN" : "ES";
-
+        // Update toggle text and flag (show target language)
+        if (langText && langToggle) {
+            if (lang === "es") {
+                langText.textContent = "EN";
+                langToggle.classList.remove("lang-es");
+                langToggle.classList.add("lang-en");
+            } else {
+                langText.textContent = "ES";
+                langToggle.classList.remove("lang-en");
+                langToggle.classList.add("lang-es");
+            }
+        }
+        
         // Update html lang attribute
         if (htmlRoot) htmlRoot.setAttribute("lang", lang);
-
+        
         // Save preference
         localStorage.setItem("preferredLanguage", lang);
         currentLang = lang;
