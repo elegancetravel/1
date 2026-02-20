@@ -1073,7 +1073,7 @@ const translations = {
         "contact-p2": "Contáctanos ahora y recibe tu cotización personalizada en minutos. Sin compromisos.",
         "btn-contact-wa": "Escribir por WhatsApp",
         "btn-contact-call": "Llamar Ahora",
-        "btn-contact-fb": "Facebook (Próximamente)",
+        "btn-contact-fb": "Facebook",
         "footer-rights": "&copy;2026 Elegance Travel. Todos los derechos reservados."
     },
     en: {
@@ -1157,7 +1157,7 @@ const translations = {
         "contact-p2": "Contact us now and receive your personalized quote in minutes. No commitments.",
         "btn-contact-wa": "Write via WhatsApp",
         "btn-contact-call": "Call Now",
-        "btn-contact-fb": "Facebook (Coming Soon)",
+        "btn-contact-fb": "Facebook",
         "footer-rights": "&copy;2026 Elegance Travel. All rights reserved."
     }
 };
