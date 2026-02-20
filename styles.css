@@ -524,25 +524,15 @@ img {
 
 .btn-facebook {
     background: transparent;
-    color: var(--color-gray-300);
-    border: 1px solid rgba(201, 169, 98, 0.3);
+    color: var(--color-white);
+    border: 1px solid var(--color-gold);
 }
 
 .btn-facebook:hover {
-    border-color: var(--color-gold);
+    background: rgba(201, 169, 98, 0.1);
     color: var(--color-white);
     transform: translateY(-3px);
-}
-
-.btn-facebook.coming-soon {
-    opacity: 0.6;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.btn-facebook.coming-soon:hover {
-    transform: none;
-    cursor: not-allowed;
-    border-color: rgba(201, 169, 98, 0.3);
+    box-shadow: var(--shadow-gold);
 }
 
 
