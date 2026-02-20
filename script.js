@@ -816,7 +816,7 @@ function initBackgroundVideo() {
     video2.className = 'scroll-video';
     video2.muted = true;
     video2.playsInline = true;
-    video2.preload = 'auto';
+    video2.preload = 'metadata';
     video2.style.position = 'absolute';
     video2.style.top = '0';
     video2.style.left = '0';
@@ -1191,10 +1191,10 @@ function initI18n() {
                 langToggle.classList.add("lang-es");
             }
         }
-        
+
         // Update html lang attribute
         if (htmlRoot) htmlRoot.setAttribute("lang", lang);
-        
+
         // Save preference
         localStorage.setItem("preferredLanguage", lang);
         currentLang = lang;
