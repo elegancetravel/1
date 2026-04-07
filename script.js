@@ -1221,8 +1221,8 @@ function initI18n() {
 // DOUBLE PUSH BUTTON LOGIC (Select then Act)
 // ========================================
 function initDoublePushButtons() {
-    // Select all action buttons and the navbar CTA
-    const buttons = document.querySelectorAll('.btn, .nav-cta');
+    // Select all action buttons, navbar CTA, and security cards
+    const buttons = document.querySelectorAll('.btn, .nav-cta, .security-card');
 
     buttons.forEach(btn => {
         btn.addEventListener('click', function (e) {
