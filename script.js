@@ -1074,7 +1074,7 @@ const translations = {
         "contact-title": "Cotiza Tu Viaje Ejecutivo Ahora",
         "contact-p1": "¿Listo para viajar con estilo?",
         "contact-p2": "Contáctanos ahora y recibe tu cotización personalizada en minutos. Sin compromisos.",
-        "btn-contact-wa": "Escribir por WhatsApp",
+        "btn-contact-wa": "Cotizar por WhatsApp",
         "btn-contact-call": "Llamar Ahora",
         "btn-contact-fb": "Facebook",
         "btn-contact-save": "Guardar Contacto",
