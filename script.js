@@ -3,14 +3,16 @@
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Initialize all components
+    // Initialize double-push FIRST to intercept clicks
+    initDoublePushButtons(); 
+
+    // Initialize all other components
     initNavbar();
     initMobileMenu();
     initSmoothScroll();
     initScrollAnimations();
     initHeroParticles();
     initI18n(); // Initialize language support
-    initContactButtons(); // Initialize contact button double-click logic
 });
 
 // ========================================
@@ -1227,10 +1229,11 @@ function initDoublePushButtons() {
             // If the button is not selected yet
             if (!this.classList.contains('btn-selected')) {
                 e.preventDefault(); // Stop the action
-
+                e.stopImmediatePropagation(); // Prevent other listeners from running (like smooth scroll)
+                
                 // Unselect all other buttons
                 buttons.forEach(b => b.classList.remove('btn-selected'));
-
+                
                 // Select this button
                 this.classList.add('btn-selected');
             } else {
