@@ -2543,14 +2543,20 @@ img {
     }
 }
 
-/* Security Badge Premium Effect */
-.security-badge {
+/* Luxury Shining Effect for all Icons (Amenities & Security) */
+.security-badge,
+.security-icon,
+.amenity-icon {
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(201, 169, 98, 0.3);
+    /* Ensure no clipping issues on some mobile browsers */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-.security-badge::before {
+.security-badge::before,
+.security-icon::before,
+.amenity-icon::before {
     content: '';
     position: absolute;
     top: -50%;
@@ -2562,6 +2568,17 @@ img {
             rgba(255, 255, 255, 0.3) 50%,
             transparent 60%);
     animation: badgeRotate 4s linear infinite;
+    /* Don't block interactions with SVG icons */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ensure SVG icons stay on top of the shine effect */
+.security-badge span,
+.security-icon svg,
+.amenity-icon svg {
+    position: relative;
+    z-index: 2;
 }
 
 @keyframes badgeRotate {
