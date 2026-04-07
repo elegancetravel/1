@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimations();
     initHeroParticles();
     initI18n(); // Initialize language support
+    initContactButtons(); // Initialize contact button double-click logic
 });
 
 // ========================================
@@ -1074,6 +1075,7 @@ const translations = {
         "btn-contact-wa": "Escribir por WhatsApp",
         "btn-contact-call": "Llamar Ahora",
         "btn-contact-fb": "Facebook",
+        "btn-contact-save": "Guardar Contacto",
         "footer-rights": "&copy;2026 Elegance Travel. Todos los derechos reservados."
     },
     en: {
@@ -1158,6 +1160,7 @@ const translations = {
         "btn-contact-wa": "Write via WhatsApp",
         "btn-contact-call": "Call Now",
         "btn-contact-fb": "Facebook",
+        "btn-contact-save": "Save Contact",
         "footer-rights": "&copy;2026 Elegance Travel. All rights reserved."
     }
 };
@@ -1210,4 +1213,59 @@ function initI18n() {
             updateContent(newLang);
         });
     }
+}
+
+// ========================================
+// CONTACT BUTTONS LOGIC (DOUBLE PUSH)
+// ========================================
+function initContactButtons() {
+    const buttons = document.querySelectorAll('.cta-buttons .btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            // If the button is not selected yet
+            if (!this.classList.contains('btn-selected')) {
+                e.preventDefault(); // Stop the link from opening
+
+                // Unselect all other buttons in this group
+                buttons.forEach(b => b.classList.remove('btn-selected'));
+
+                // Select this button
+                this.classList.add('btn-selected');
+            } else {
+                // If it's already selected, this is the "second push"
+                // For the "Save Contact" button, we handle it with JS
+                if (this.id === 'btn-save-contact') {
+                    e.preventDefault();
+                    saveContact();
+                }
+                // For other buttons (WhatsApp, Facebook, Phone), the default link behavior will now trigger
+            }
+        });
+    });
+
+    // Close selection if clicking elsewhere
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('.cta-buttons')) {
+            buttons.forEach(b => b.classList.remove('btn-selected'));
+        }
+    });
+}
+
+function saveContact() {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Elegance Travel
+ORG:Elegance Travel
+NOTE:Viajes Ejecutivos
+TEL;TYPE=WORK,VOICE:2381199898
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const newLink = document.createElement('a');
+    newLink.download = 'Elegance_Travel.vcf';
+    newLink.href = url;
+    newLink.click();
+    window.URL.revokeObjectURL(url);
 }
