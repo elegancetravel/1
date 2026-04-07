@@ -200,8 +200,9 @@ img {
 }
 
 .nav-link.nav-cta {
-    background: var(--gradient-gold);
-    color: var(--color-black);
+    background: transparent;
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
     padding: 0.5rem 1.25rem;
     border-radius: var(--radius-sm);
     font-weight: 600;
@@ -472,8 +473,9 @@ img {
 }
 
 .btn-primary {
-    background: var(--gradient-gold);
-    color: var(--color-black);
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-gold);
 }
 
 .btn-primary:hover {
@@ -493,8 +495,9 @@ img {
 }
 
 .btn-gold {
-    background: var(--gradient-gold);
-    color: var(--color-black);
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-gold);
 }
 
 .btn-gold:hover {
@@ -549,8 +552,9 @@ img {
     box-shadow: var(--shadow-gold);
 }
 
-/* Contact Button Selection State (Double Push Logic) */
-.btn.btn-selected {
+/* Button Selection State (Double Push Logic) */
+.btn.btn-selected, 
+.nav-link.nav-cta.btn-selected {
     background: var(--gradient-gold) !important;
     color: var(--color-black) !important;
     box-shadow: var(--shadow-gold), 0 0 30px rgba(201, 169, 98, 0.4) !important;
@@ -558,7 +562,8 @@ img {
     transform: translateY(-3px) scale(1.05);
 }
 
-.btn.btn-selected svg {
+.btn.btn-selected svg,
+.nav-link.nav-cta.btn-selected svg {
     color: var(--color-black) !important;
 }
 

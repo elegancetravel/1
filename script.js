@@ -1216,18 +1216,19 @@ function initI18n() {
 }
 
 // ========================================
-// CONTACT BUTTONS LOGIC (DOUBLE PUSH)
+// DOUBLE PUSH BUTTON LOGIC (Select then Act)
 // ========================================
-function initContactButtons() {
-    const buttons = document.querySelectorAll('.cta-buttons .btn');
+function initDoublePushButtons() {
+    // Select all action buttons and the navbar CTA
+    const buttons = document.querySelectorAll('.btn, .nav-cta');
 
     buttons.forEach(btn => {
         btn.addEventListener('click', function (e) {
             // If the button is not selected yet
             if (!this.classList.contains('btn-selected')) {
-                e.preventDefault(); // Stop the link from opening
+                e.preventDefault(); // Stop the action
 
-                // Unselect all other buttons in this group
+                // Unselect all other buttons
                 buttons.forEach(b => b.classList.remove('btn-selected'));
 
                 // Select this button
@@ -1239,14 +1240,15 @@ function initContactButtons() {
                     e.preventDefault();
                     saveContact();
                 }
-                // For other buttons (WhatsApp, Facebook, Phone), the default link behavior will now trigger
+                // For other buttons, let the default behavior happen (links, phone, etc.)
             }
         });
     });
 
-    // Close selection if clicking elsewhere
+    // Close selection if clicking elsewhere (outside any of these buttons)
     document.addEventListener('click', function (e) {
-        if (!e.target.closest('.cta-buttons')) {
+        if (!e.target.closest('.btn') && !e.target.closest('.nav-link.nav-cta')) {
+            const buttons = document.querySelectorAll('.btn, .nav-cta');
             buttons.forEach(b => b.classList.remove('btn-selected'));
         }
     });
