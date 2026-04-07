@@ -1159,7 +1159,7 @@ const translations = {
         "contact-title": "Quote Your Executive Trip Now",
         "contact-p1": "Ready to travel with style?",
         "contact-p2": "Contact us now and receive your personalized quote in minutes. No commitments.",
-        "btn-contact-wa": "Write via WhatsApp",
+        "btn-contact-wa": "Quote via WhatsApp",
         "btn-contact-call": "Call Now",
         "btn-contact-fb": "Facebook",
         "btn-contact-save": "Save Contact",
